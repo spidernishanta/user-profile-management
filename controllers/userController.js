@@ -6,8 +6,8 @@ const bcrypt = require("bcryptjs");
 // register user
 const register = async (req, res) => {
   try {
-    const { name, email, password, address } = req.body;
-    const user = new User({ name, email, password, address });
+    const { name, email, password, address, bio, profilePic } = req.body;
+    const user = new User({ name, email, password, address, bio, profilePic });
     await user.save();
 
     //generate jwt
